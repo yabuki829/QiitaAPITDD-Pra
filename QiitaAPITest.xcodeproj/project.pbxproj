@@ -10,12 +10,13 @@
 		1AE1BB68290AA54C00706589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB67290AA54C00706589 /* AppDelegate.swift */; };
 		1AE1BB6A290AA54C00706589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB69290AA54C00706589 /* SceneDelegate.swift */; };
 		1AE1BB6C290AA54C00706589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB6B290AA54C00706589 /* ViewController.swift */; };
-		1AE1BB6F290AA54C00706589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE1BB6D290AA54C00706589 /* Main.storyboard */; };
 		1AE1BB71290AA54E00706589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE1BB70290AA54E00706589 /* Assets.xcassets */; };
 		1AE1BB74290AA54E00706589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE1BB72290AA54E00706589 /* LaunchScreen.storyboard */; };
 		1AE1BB7F290AA54F00706589 /* QiitaAPITestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB7E290AA54F00706589 /* QiitaAPITestTests.swift */; };
 		1AE1BB89290AA54F00706589 /* QiitaAPITestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB88290AA54F00706589 /* QiitaAPITestUITests.swift */; };
 		1AE1BB8B290AA54F00706589 /* QiitaAPITestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB8A290AA54F00706589 /* QiitaAPITestUITestsLaunchTests.swift */; };
+		1AE1BB9B290AAC0300706589 /* QiitaAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB9A290AAC0300706589 /* QiitaAPIModel.swift */; };
+		1AE1BB9D290ABF8D00706589 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1BB9C290ABF8D00706589 /* ListViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		1AE1BB67290AA54C00706589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE1BB69290AA54C00706589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1AE1BB6B290AA54C00706589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1AE1BB6E290AA54C00706589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AE1BB70290AA54E00706589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AE1BB73290AA54E00706589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AE1BB75290AA54E00706589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		1AE1BB84290AA54F00706589 /* QiitaAPITestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaAPITestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE1BB88290AA54F00706589 /* QiitaAPITestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPITestUITests.swift; sourceTree = "<group>"; };
 		1AE1BB8A290AA54F00706589 /* QiitaAPITestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPITestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1AE1BB9A290AAC0300706589 /* QiitaAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPIModel.swift; sourceTree = "<group>"; };
+		1AE1BB9C290ABF8D00706589 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,11 @@
 		1AE1BB66290AA54C00706589 /* QiitaAPITest */ = {
 			isa = PBXGroup;
 			children = (
+				1AE1BB99290AABC500706589 /* Views */,
+				1AE1BB98290AAB9700706589 /* Controllers */,
+				1AE1BB97290AAB8800706589 /* Models */,
 				1AE1BB67290AA54C00706589 /* AppDelegate.swift */,
 				1AE1BB69290AA54C00706589 /* SceneDelegate.swift */,
-				1AE1BB6B290AA54C00706589 /* ViewController.swift */,
-				1AE1BB6D290AA54C00706589 /* Main.storyboard */,
 				1AE1BB70290AA54E00706589 /* Assets.xcassets */,
 				1AE1BB72290AA54E00706589 /* LaunchScreen.storyboard */,
 				1AE1BB75290AA54E00706589 /* Info.plist */,
@@ -125,6 +128,30 @@
 				1AE1BB8A290AA54F00706589 /* QiitaAPITestUITestsLaunchTests.swift */,
 			);
 			path = QiitaAPITestUITests;
+			sourceTree = "<group>";
+		};
+		1AE1BB97290AAB8800706589 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1BB9A290AAC0300706589 /* QiitaAPIModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1AE1BB98290AAB9700706589 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1BB6B290AA54C00706589 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1AE1BB99290AABC500706589 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1BB9C290ABF8D00706589 /* ListViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +260,6 @@
 			files = (
 				1AE1BB74290AA54E00706589 /* LaunchScreen.storyboard in Resources */,
 				1AE1BB71290AA54E00706589 /* Assets.xcassets in Resources */,
-				1AE1BB6F290AA54C00706589 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AE1BB6C290AA54C00706589 /* ViewController.swift in Sources */,
+				1AE1BB9B290AAC0300706589 /* QiitaAPIModel.swift in Sources */,
+				1AE1BB9D290ABF8D00706589 /* ListViewCell.swift in Sources */,
 				1AE1BB68290AA54C00706589 /* AppDelegate.swift in Sources */,
 				1AE1BB6A290AA54C00706589 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1AE1BB6D290AA54C00706589 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AE1BB6E290AA54C00706589 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1AE1BB72290AA54E00706589 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +462,6 @@
 				INFOPLIST_FILE = QiitaAPITest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +489,6 @@
 				INFOPLIST_FILE = QiitaAPITest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -10,27 +10,47 @@ import XCTest
 
 class QiitaAPITestTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+  
+    //タイトル: ユーザーは記事一覧の１番目のタイトルを見ることができる
+    //詳細
+    //  given: ユーザーは記事一覧画面にいる
+    //  When : ユーザーはステイタスバーを見る
+    //  Then : ユーザーはその下の記事一覧の１タイトルを見ることができる
+    
+    //複雑な実装であれば簡単な実装から始めるのもあり
+    //1.タイトルを表示するされること
+    //2.タイトルの一覧が表示されていること
+    
+    func test_タイトルの一覧が表示されていること(){
+        let article = Article(title: "タイトル")
+        let model = FakeQiitaAPIModel(response: [article])
+        let vc = ViewController()
+        vc.model = model
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        
+        guard let cell = vc.tableView.dataSource?.tableView(vc.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ListCell
+        else {
+            XCTFail()
+            return
         }
+        XCTAssertEqual(cell.titleLabel.text, "タイトル")
     }
+    
+    
+}
 
+
+class FakeQiitaAPIModel:QiitaAPIProtocol{
+    
+    let  response: [Article]
+    
+    init(response: [Article]){
+        self.response = response
+    }
+    func fetch(completion: @escaping (([Article]?) -> Void)) {
+        completion(response)
+    }
+    
 }
