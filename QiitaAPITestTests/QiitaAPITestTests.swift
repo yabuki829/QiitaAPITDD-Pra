@@ -6,9 +6,18 @@
 //
 
 import XCTest
+import SafariServices
 @testable import QiitaAPITest
 
 class QiitaAPITestTests: XCTestCase {
+    var vc :ViewController!
+    
+    override func setUp() {
+        let article = Article(title: "タイトル", url: "https://qiita.com/")
+        let model = FakeQiitaAPIModel(response: [article])
+        vc = ViewController()
+        vc.model = model
+    }
 
   
     //タイトル: ユーザーは記事一覧の１番目のタイトルを見ることができる
@@ -22,10 +31,7 @@ class QiitaAPITestTests: XCTestCase {
     //2.タイトルの一覧が表示されていること
     
     func test_タイトルの一覧が表示されていること(){
-        let article = Article(title: "タイトル")
-        let model = FakeQiitaAPIModel(response: [article])
-        let vc = ViewController()
-        vc.model = model
+       
         let window = UIWindow()
         window.rootViewController = vc
         window.makeKeyAndVisible()
@@ -38,7 +44,25 @@ class QiitaAPITestTests: XCTestCase {
         XCTAssertEqual(cell.titleLabel.text, "タイトル")
     }
     
+    //タイトル: 記事をタップすると詳細画面に遷移できること
+    //詳細
+    //  given: ユーザーは記事一覧画面にいる
+    //  When : ユーザーは記事をタップする
+    //  Then : ユーザーはそ 詳細画面に遷移することができる
+    //MEMO
+    // * 詳細画面はSFSafariViewControllerで表示する
     
+    func test_記事をタップで詳細画面に遷移すること(){
+      
+        
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        
+        vc.tableView(vc.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(vc.presentedViewController is SFSafariViewController)
+    }
 }
 
 

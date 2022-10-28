@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 
+
+
 protocol QiitaAPIProtocol {
     func fetch(completion: @escaping (([Article]?) -> Void))
 }

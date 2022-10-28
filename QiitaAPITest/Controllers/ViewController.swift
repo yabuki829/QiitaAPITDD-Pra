@@ -7,11 +7,9 @@
 
 import UIKit
 
-struct Article: Codable {
-    let title: String
-}
 
 class ViewController: UIViewController {
+
     var model:QiitaAPIProtocol? = nil
     var items : [Article] = []
     let tableView:UITableView = {
@@ -48,6 +46,7 @@ class ViewController: UIViewController {
 
 }
 
+import SafariServices
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,6 +58,12 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.identifier, for: indexPath) as! ListCell
         cell.configure(title: items[indexPath.row].title)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL(string: items[indexPath.row].url) else { return }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
     }
     
     
